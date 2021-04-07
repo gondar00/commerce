@@ -34,6 +34,7 @@ interface Product {
   path?: string
   sku?: string
   images: ProductImage[]
+  price: any
    variants: ProductVariant2[]
 }
   
