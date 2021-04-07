@@ -3,7 +3,9 @@ const bundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = bundleAnalyzer({
-  ignoreBuildErrors: true,
+  typescript:{
+    ignoreBuildErrors: true,
+  },
   images: {
     domains: ['cdn11.bigcommerce.com'],
   },
