@@ -7,6 +7,7 @@ import WishlistButton from '@components/wishlist/WishlistButton'
 
 import usePrice from '@framework/use-price'
 import type { ProductNode } from '@framework/api/operations/get-all-products'
+import Image, { ImageProps } from 'next/image'
 
 interface Product {
   name: string
@@ -38,17 +39,23 @@ const ProductCard: FC<Props> = ({
         className={cn(s.root, { [s.simple]: variant === 'simple' }, className)}
       >
       <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-          <img
-            className="hover:grow hover:shadow-lg"
-            src={p.images.edges?.[0]?.node.urlOriginal! || placeholderImg}
-            alt={p.images.edges?.[0]?.node.altText || 'Product Image'}
-           />
+           {product?.images && (
+            <Image
+              quality="85"
+              className="hover:grow hover:shadow-lg"
+              src={product.images[0].url || placeholderImg}
+              alt={product.name || 'Product Image'}
+              height={320}
+              width={320}
+              layout="fixed"
+            />
+          )}
           <div className="pt-3 flex items-center justify-between">
             <p>{p.name}</p>
               <WishlistButton
                 className="h-6 w-6 fill-current text-gray-500 hover:text-black"
-                productId={p.entityId}
-                variant={p.variants.edges?.[0]!}
+                productId={product.id}
+                variant={product.variants[0] as any}
               />
           </div>
           <p className="pt-1 text-gray-900">{price}</p>
