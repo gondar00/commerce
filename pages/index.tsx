@@ -18,7 +18,7 @@ export async function getStaticProps({
   const config = getConfig({ locale })
 
   const { products } = await getAllProducts({
-    variables: { first: 42 },
+    variables: { first: 12 },
     config,
     preview,
   })
@@ -129,10 +129,6 @@ Alternatively if you want to just have a single hero
             key={i}
             product={product}
             variant="slim"
-            imgProps={{
-              width: 400,
-              height: 400,
-            }}
           />
         ))}
     </div>
