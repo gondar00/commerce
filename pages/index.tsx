@@ -45,7 +45,6 @@ export default function Home({
   brands,
   categories,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log('products', products)
   return (
     <>
       <div className="carousel relative container mx-auto" style={{ maxWidth: 1600 }}>
@@ -140,7 +139,7 @@ Alternatively if you want to just have a single hero
         </a>
       </div> */}
         </div>
-        <div className='text-center'>
+        <div className='flex justify-center'>
           <Link href="/search">
             <Button
               className='flex items-center'

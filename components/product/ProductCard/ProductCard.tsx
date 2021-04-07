@@ -83,7 +83,7 @@ const ProductCard: FC<Props> = ({
               productId={product.id}
               variant={product.variants && product.variants[0] as any}
             /> */}
-            <b>
+            <b className='px-3'>
             {price}
           </b>
           </div>
