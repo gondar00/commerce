@@ -44,57 +44,22 @@ const ProductCard: FC<Props> = ({
       <a
         className={cn(s.root, { [s.simple]: variant === 'simple' }, className)}
       >
-        {variant === 'slim' ? (
-          <div className="relative overflow-hidden box-border">
-            <div className="absolute inset-0 flex items-center justify-end mr-8 z-20">
-              <span className="bg-black text-white inline-block p-3 font-bold text-xl break-words">
-                {p.name}
-              </span>
-            </div>
-            <Image
-              quality="85"
-              width={imgWidth}
-              sizes={imgSizes}
-              height={imgHeight}
-              layout={imgLayout}
-              loading={imgLoading}
-              priority={imgPriority}
-              src={p.images.edges?.[0]?.node.urlOriginal! || placeholderImg}
-              alt={p.images.edges?.[0]?.node.altText || 'Product Image'}
-            />
-          </div>
-        ) : (
-          <>
-            <div className={s.squareBg} />
-            <div className="flex flex-row justify-between box-border w-full z-20 absolute">
-              <div className="absolute top-0 left-0 pr-16 max-w-full">
-                <h3 className={s.productTitle}>
-                  <span>{p.name}</span>
-                </h3>
-                <span className={s.productPrice}>{price}</span>
-              </div>
+      <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+          <img
+            className="hover:grow hover:shadow-lg"
+            src={p.images.edges?.[0]?.node.urlOriginal! || placeholderImg}
+            alt={p.images.edges?.[0]?.node.altText || 'Product Image'}
+           />
+          <div className="pt-3 flex items-center justify-between">
+            <p>{p.name}</p>
               <WishlistButton
-                className={s.wishlistButton}
+                className="h-6 w-6 fill-current text-gray-500 hover:text-black"
                 productId={p.entityId}
                 variant={p.variants.edges?.[0]!}
               />
-            </div>
-            <div className={s.imageContainer}>
-              <Image
-                quality="85"
-                src={src || placeholderImg}
-                alt={p.name}
-                className={s.productImage}
-                width={imgWidth}
-                sizes={imgSizes}
-                height={imgHeight}
-                layout={imgLayout}
-                loading={imgLoading}
-                priority={imgPriority}
-              />
-            </div>
-          </>
-        )}
+          </div>
+          <p className="pt-1 text-gray-900">{price}</p>
+      </div>
       </a>
     </Link>
   )
