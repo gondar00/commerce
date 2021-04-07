@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
          <style>
+           {`
         .work-sans {
             font-family: 'Work Sans', sans-serif;
         }
@@ -57,6 +58,7 @@ class MyDocument extends Document {
             color: #000;
             /*Set to match the Tailwind colour you want the active one to be */
         }
+      `}
     </style>
         <body className="loading">
           <Main />
