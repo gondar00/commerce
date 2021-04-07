@@ -14,7 +14,7 @@ interface ProductImage {
 }
   
 interface Product {
-  id?: string
+  id: string | numbe
   name: string
   description: string
   slug?: string
