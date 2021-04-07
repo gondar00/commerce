@@ -78,7 +78,10 @@ const ProductCard: FC<Props> = ({
                 variant={product.variants[0] as any}
               />
           </div>
-          <p className="pt-1 text-gray-900">{price}</p>
+          <p className="pt-1 text-gray-900">
+            {product.price.value}
+                &nbsp;
+                {product.price.currencyCode}</p>
       </div>
       </a>
     </Link>
