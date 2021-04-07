@@ -1,16 +1,11 @@
 {
-  "title": "ACME Storefront | Powered by Next.js Commerce",
-  "titleTemplate": "%s - ACME Storefront",
-  "description": "Next.js Commerce -> https://www.nextjs.org/commerce",
+  "title": "SNAXBUDDY STORE | Curated boxes",
+  "titleTemplate": "%s - Snaxbuddy",
+  "description": "snaxbuddy store for curated boxes for snacks",
   "openGraph": {
     "type": "website",
     "locale": "en_IE",
-    "url": "https://nextjs.org/commerce",
-    "site_name": "Next.js Commerce"
-  },
-  "twitter": {
-    "handle": "@nextjs",
-    "site": "@nextjs",
-    "cardType": "summary_large_image"
+    "url": "https://snaxbuddy.com",
+    "site_name": "Snaxbuddy snacks"
   }
 }
