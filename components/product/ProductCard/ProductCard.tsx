@@ -12,7 +12,20 @@ interface ProductImage {
   url: string
   alt?: string
 }
-  
+  interface ProductOption {
+    id: string | number
+  displayName: string
+  values: ProductOptionValues[]
+}
+
+interface ProductOptionValues {
+  label: string
+  hexColors?: string[]
+}
+interface ProductVariant2 {
+  id: string | number
+  options: ProductOption[]
+}
 interface Product {
   id: string | number
   name: string
@@ -21,6 +34,7 @@ interface Product {
   path?: string
   sku?: string
   images: ProductImage[]
+   variants: ProductVariant2[]
 }
   
 interface Props {
