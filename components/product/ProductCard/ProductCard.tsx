@@ -10,37 +10,22 @@ import type { ProductNode } from '@framework/api/operations/get-all-products'
 
 interface Props {
   className?: string
-  product: ProductNode
+  product: Product
   variant?: 'slim' | 'simple'
-  imgWidth: number | string
-  imgHeight: number | string
-  imgLayout?: 'fixed' | 'intrinsic' | 'responsive' | undefined
-  imgPriority?: boolean
-  imgLoading?: 'eager' | 'lazy'
-  imgSizes?: string
+  imgProps?: Omit<ImageProps, 'src'>
 }
+
+const placeholderImg = '/product-img-placeholder.svg'
 
 const ProductCard: FC<Props> = ({
   className,
-  product: p,
+  product,
   variant,
-  imgWidth,
-  imgHeight,
-  imgPriority,
-  imgLoading,
-  imgSizes,
-  imgLayout = 'responsive',
+  imgProps,
+  ...props
 }) => {
-  const src = p.images.edges?.[0]?.node?.urlOriginal!
-  const placeholderImg = '/product-img-placeholder.svg';
-  const { price } = usePrice({
-    amount: p.prices?.price?.value,
-    baseAmount: p.prices?.retailPrice?.value,
-    currencyCode: p.prices?.price?.currencyCode!,
-  })
-
   return (
-    <Link href={`/product${p.path}`}>
+    <Link href={`/product${p.slug}`}>
       <a
         className={cn(s.root, { [s.simple]: variant === 'simple' }, className)}
       >
