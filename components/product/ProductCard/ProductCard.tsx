@@ -33,7 +33,7 @@ const ProductCard: FC<Props> = ({
   ...props
 }) => {
   return (
-    <Link href={`/product${p.slug}`}>
+    <Link href={`/product${product.slug}`}>
       <a
         className={cn(s.root, { [s.simple]: variant === 'simple' }, className)}
       >
@@ -50,7 +50,7 @@ const ProductCard: FC<Props> = ({
             />
           )}
           <div className="pt-3 flex items-center justify-between">
-            <p>{p.name}</p>
+            <p>{product.name}</p>
               <WishlistButton
                 className="h-6 w-6 fill-current text-gray-500 hover:text-black"
                 productId={product.id}
