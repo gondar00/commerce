@@ -13,10 +13,6 @@ interface Product {
   description: string
   slug?: string
   path?: string
-  images: ProductImage[]
-  variants: ProductVariant2[]
-  price: ProductPrice
-  options: ProductOption[]
   sku?: string
 }
   
