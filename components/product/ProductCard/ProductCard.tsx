@@ -8,6 +8,18 @@ import WishlistButton from '@components/wishlist/WishlistButton'
 import usePrice from '@framework/use-price'
 import type { ProductNode } from '@framework/api/operations/get-all-products'
 
+interface Product {
+  name: string
+  description: string
+  slug?: string
+  path?: string
+  images: ProductImage[]
+  variants: ProductVariant2[]
+  price: ProductPrice
+  options: ProductOption[]
+  sku?: string
+}
+  
 interface Props {
   className?: string
   product: Product
