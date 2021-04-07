@@ -8,12 +8,18 @@ import usePrice from '@framework/use-price'
 import type { ProductNode } from '@framework/api/operations/get-all-products'
 import Image, { ImageProps } from 'next/image'
 
+interface ProductImage {
+  url: string
+  alt?: string
+}
+  
 interface Product {
   name: string
   description: string
   slug?: string
   path?: string
   sku?: string
+  images: ProductImage[]
 }
   
 interface Props {
