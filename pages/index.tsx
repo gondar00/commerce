@@ -124,9 +124,9 @@ Alternatively if you want to just have a single hero
           </a>
         </div>
       </nav>
-       {products.slice(0, 40).map((product, i) => (
+       {products.map((product, i) => (
           <ProductCard
-            key={product.id}
+            key={i}
             product={product}
             variant="slim"
             imgProps={{
