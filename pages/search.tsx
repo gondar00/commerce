@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { getConfig } from '@framework/api'
-import getAllPages from '@framework/api/operations/get-all-pages'
+// import getAllPages from '@framework/api/operations/get-all-pages'
 import getSiteInfo from '@framework/api/operations/get-site-info'
 import useSearch from '@framework/products/use-search'
 import { Layout } from '@components/common'
@@ -25,11 +25,11 @@ export async function getStaticProps({
   locale,
 }: GetStaticPropsContext) {
   const config = getConfig({ locale })
-  const { pages } = await getAllPages({ config, preview })
+  // const { pages } = await getAllPages({ config, preview })
   const { categories, brands } = await getSiteInfo({ config, preview })
 
   return {
-    props: { pages, categories, brands },
+    props: { categories, brands },
   }
 }
 
@@ -69,6 +69,7 @@ export default function Search({
     brandId: activeBrand?.entityId,
     sort: typeof sort === 'string' ? sort : '',
   })
+
 
   const handleClick = (event: any, filter: string) => {
     if (filter !== activeFilter) {
@@ -212,75 +213,6 @@ export default function Search({
                   </svg>
                 </button>
               </span>
-            </div>
-            <div
-              className={`origin-top-left absolute lg:relative left-0 mt-2 w-full rounded-md shadow-lg lg:shadow-none z-10 mb-10 lg:block ${
-                activeFilter !== 'brands' || toggleFilter !== true
-                  ? 'hidden'
-                  : ''
-              }`}
-            >
-              <div className="rounded-sm bg-white shadow-xs lg:bg-none lg:shadow-none">
-                <div
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="options-menu"
-                >
-                  <ul>
-                    <li
-                      className={cn(
-                        'block text-sm leading-5 text-gray-700 lg:text-base lg:no-underline lg:font-bold lg:tracking-wide hover:bg-gray-100 lg:hover:bg-transparent hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900',
-                        {
-                          underline: !activeBrand?.name,
-                        }
-                      )}
-                    >
-                      <Link
-                        href={{
-                          pathname: getDesignerPath('', category),
-                          query,
-                        }}
-                      >
-                        <a
-                          onClick={(e) => handleClick(e, 'brands')}
-                          className={
-                            'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
-                          }
-                        >
-                          All Brands
-                        </a>
-                      </Link>
-                    </li>
-                    {brands.flatMap(({ node }) => (
-                      <li
-                        key={node.path}
-                        className={cn(
-                          'block text-sm leading-5 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900',
-                          {
-                            underline: activeBrand?.entityId === node.entityId,
-                          }
-                        )}
-                      >
-                        <Link
-                          href={{
-                            pathname: getDesignerPath(node.path, category),
-                            query,
-                          }}
-                        >
-                          <a
-                            onClick={(e) => handleClick(e, 'brands')}
-                            className={
-                              'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
-                            }
-                          >
-                            {node.name}
-                          </a>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>

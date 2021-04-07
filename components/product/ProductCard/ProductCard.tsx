@@ -12,8 +12,8 @@ interface ProductImage {
   url: string
   alt?: string
 }
-  interface ProductOption {
-    id: string | number
+interface ProductOption {
+  id: string | number
   displayName: string
   values: ProductOptionValues[]
 }
@@ -35,9 +35,9 @@ interface Product {
   sku?: string
   images: ProductImage[]
   price: any
-   variants: ProductVariant2[]
+  variants: ProductVariant2[]
 }
-  
+
 interface Props {
   className?: string
   product: Product
@@ -54,36 +54,41 @@ const ProductCard: FC<Props> = ({
   imgProps,
   ...props
 }) => {
+  const { price } = usePrice({
+    amount: product.prices?.price?.value,
+    baseAmount: product.prices?.retailPrice?.value,
+    currencyCode: product.prices?.price?.currencyCode!,
+  })
   return (
-    <Link href={`/product${product.slug}`}>
+    <Link href={`/product${product.path}`}>
       <a
-        className={cn(s.root, { [s.simple]: variant === 'simple' }, className)}
+        className={className}
       >
-      <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-           {product?.images && (
+        <div>
+          {product?.images && (
             <Image
-              quality="85"
+              quality="25"
               className="hover:grow hover:shadow-lg"
-              src={product.images[0].url || placeholderImg}
+              src={product.images.edges.length > 0 && product.images.edges[0].node.urlOriginal || placeholderImg}
               alt={product.name || 'Product Image'}
-              height={320}
-              width={320}
+              height={300}
+              width={300}
               layout="fixed"
             />
           )}
-          <div className="pt-3 flex items-center justify-between">
-            <p>{product.name}</p>
-              <WishlistButton
-                className="h-6 w-6 fill-current text-gray-500 hover:text-black"
-                productId={product.id}
-                variant={product.variants[0] as any}
-              />
+          <div className="pt-3  text-center ">
+            <p className="text-sm text-center">{product.name}</p>
+            {/* <WishlistButton
+              className="h-6 w-6 fill-current text-gray-500 hover:text-black"
+              productId={product.id}
+              variant={product.variants && product.variants[0] as any}
+            /> */}
+            <b>
+            {price}
+          </b>
           </div>
-          <p className="pt-1 text-gray-900">
-            {product.price.value}
-                &nbsp;
-                {product.price.currencyCode}</p>
-      </div>
+          
+        </div>
       </a>
     </Link>
   )

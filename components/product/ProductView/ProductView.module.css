@@ -35,7 +35,7 @@
   }
 
   & .name {
-    @apply px-6 py-2 bg-primary text-primary font-bold;
+    @apply px-6 py-2 text-primary font-bold;
     font-size: 2rem;
     letter-spacing: 0.4px;
   }

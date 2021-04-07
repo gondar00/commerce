@@ -16,7 +16,7 @@ import {
   getProductOptions,
   SelectedOptions,
 } from '../helpers'
-import WishlistButton from '@components/wishlist/WishlistButton'
+// import WishlistButton from '@components/wishlist/WishlistButton'
 
 interface Props {
   className?: string
@@ -66,7 +66,7 @@ const ProductView: FC<Props> = ({ product }) => {
           images: [
             {
               url: product.images.edges?.[0]?.node.urlOriginal!,
-              width: 800,
+              width: 600,
               height: 600,
               alt: product.name,
             },
@@ -152,11 +152,11 @@ const ProductView: FC<Props> = ({ product }) => {
           </div>
         </div>
 
-        <WishlistButton
+        {/* <WishlistButton
           className={s.wishlistButton}
           productId={product.entityId}
           variant={variant!}
-        />
+        /> */}
       </div>
     </Container>
   )
