@@ -9,7 +9,7 @@ import { Heart } from '@components/icons'
 import { useUI } from '@components/ui/context'
 
 type Props = {
-  productId: string | number
+  productId: any
   variant: NonNullable<ProductNode['variants']['edges']>[0]
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
