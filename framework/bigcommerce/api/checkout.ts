@@ -14,6 +14,8 @@ const checkoutApi: BigcommerceApiHandler<any> = async (req, res, config) => {
   const { cookies } = req
   const cartId = cookies[config.cartCookie]
 
+  console.log(cartId)
+
   try {
     if (!cartId) {
       res.redirect('/cart')
@@ -28,7 +30,7 @@ const checkoutApi: BigcommerceApiHandler<any> = async (req, res, config) => {
     )
 
     if (fullCheckout) {
-      res.redirect(data.checkout_url)
+      res.redirect(data.checkout_url.replace(/^[^.]*/, 'snaxbuddy'))
       return
     }
 
