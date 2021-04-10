@@ -29,15 +29,17 @@ const LoginView: FC<Props> = () => {
     try {
       setLoading(true)
       setMessage('')
-      await login({
+      const data = await login({
         email,
         password,
       })
+
       setLoading(false)
       closeModal()
     } catch ({ errors }) {
       setMessage(errors[0].message)
       setLoading(false)
+      setDisabled(false)
     }
   }
 
@@ -60,9 +62,9 @@ const LoginView: FC<Props> = () => {
       onSubmit={handleLogin}
       className="w-80 flex flex-col justify-between p-3"
     >
-      <div className="flex justify-center pb-12 ">
+      {/* <div className="flex justify-center pb-12 ">
         <Logo width="64px" height="64px" />
-      </div>
+      </div> */}
       <div className="flex flex-col space-y-3">
         {message && (
           <div className="text-red border border-red p-3">
@@ -77,7 +79,6 @@ const LoginView: FC<Props> = () => {
         )}
         <Input type="email" placeholder="Email" onChange={setEmail} />
         <Input type="password" placeholder="Password" onChange={setPassword} />
-
         <Button
           variant="slim"
           type="submit"
