@@ -30,7 +30,7 @@ const checkoutApi: BigcommerceApiHandler<any> = async (req, res, config) => {
     )
 
     if (fullCheckout) {
-      res.redirect(data.checkout_url.replace(/^[^.]*/, 'https://snaxbuddy'))
+      res.redirect(data.checkout_url)
       return
     }
 
