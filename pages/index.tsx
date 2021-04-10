@@ -52,7 +52,7 @@ export default function Home({
           {/*Slide 1*/}
           <input className="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden checked />
           <div className="carousel-item absolute opacity-0" style={{ height: '50vh' }}>
-            <div className="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80")' }}>
+            <div className="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1603189864792-cb81bf683b17?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80")' }}>
               <div className="container mx-auto">
                 <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-12 tracking-wide">
                   <p className="text-black text-2xl my-4">BOX 1</p>
@@ -66,7 +66,7 @@ export default function Home({
           {/*Slide 2*/}
           <input className="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden />
           <div className="carousel-item absolute opacity-0 bg-cover bg-right" style={{ height: '50vh' }}>
-            <div className="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=1600&q=80")' }}>
+            <div className="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1575377427642-087cf684f29d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fGZvb2QlMjBib3h8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60")' }}>
               <div className="container mx-auto">
                 <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-12 tracking-wide">
                   <p className="text-black text-2xl my-4">Box 2</p>
