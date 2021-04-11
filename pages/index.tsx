@@ -117,10 +117,9 @@ Alternatively if you want to just have a single hero
 </section>
 */}
       <section className="bg-white py-8">
-        <div className=" mx-auto flex items-center flex-wrap pt-4 pb-12">
+        <div className="w-1/2 sm:w-1/2 md:w-1/4 mx-auto flex items-center flex-wrap pt-4 pb-12">
           {products.map((product, i) => (
             <ProductCard
-              style={{width: '25%'}}
               className='p-6 flex flex-col items-center'
               key={i}
               product={product.node}
