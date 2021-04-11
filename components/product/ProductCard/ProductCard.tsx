@@ -63,6 +63,7 @@ const ProductCard: FC<Props> = ({
     <Link href={`/product${product.path}`}>
       <a
         className={className}
+        style={props.style && props.style}
       >
         <div>
           {product?.images && (

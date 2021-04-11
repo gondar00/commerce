@@ -120,7 +120,8 @@ Alternatively if you want to just have a single hero
         <div className=" mx-auto flex items-center flex-wrap pt-4 pb-12">
           {products.map((product, i) => (
             <ProductCard
-              className='w-full md:w-1/2 xl:w-1/3 p-6 flex flex-col items-center'
+              style={{width: '25%'}}
+              className='p-6 flex flex-col items-center'
               key={i}
               product={product.node}
               variant="slim"
