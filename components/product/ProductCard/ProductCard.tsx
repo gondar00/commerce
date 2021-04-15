@@ -78,7 +78,7 @@ const ProductCard: FC<Props> = ({
             />
           )}
           <div className="pt-3  text-center ">
-            <p className="text-sm text-center">{product.name}</p>
+            <p style={{ maxWidth: 300 }} className="text-sm text-center">{product.name}</p>
             {/* <WishlistButton
               className="h-6 w-6 fill-current text-gray-500 hover:text-black"
               productId={product.id}
