@@ -42,15 +42,7 @@ export async function getStaticProps({
 export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   const { pages } = await getAllPages()
   const [invalidPaths, log] = missingLocaleInPages()
-  const paths = pages
-    .map((page) => page.url)
-    .filter((url) => {
-      if (!url || !locales) return url
-      // If there are locales, only include the pages that include one of the available locales
-      if (locales.includes(getSlug(url).split('/')[0])) return url
-
-      invalidPaths.push(url)
-    })
+  const paths = pages.map((page) => page.url)
   log()
 
   return {
