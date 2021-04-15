@@ -72,8 +72,8 @@ const ProductCard: FC<Props> = ({
               className="hover:grow hover:shadow-lg"
               src={product.images.edges.length > 0 && product.images.edges[0].node.urlOriginal || placeholderImg}
               alt={product.name || 'Product Image'}
-              height={300}
-              width={300}
+              height={250}
+              width={250}
               layout="fixed"
             />
           )}
