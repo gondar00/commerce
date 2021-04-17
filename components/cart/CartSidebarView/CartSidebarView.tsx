@@ -117,7 +117,9 @@ const CartSidebarView: FC = () => {
                 </li> */}
                 <li className="flex justify-between py-1">
                   <span>Estimated Shipping</span>
-                  <span className="font-bold tracking-wide">FREE</span>
+                  <span className="font-bold tracking-wide">
+                    {data.base_amount > 30 ? 'FREE' : `${data.currency.code} 3.95'}
+                  </span>
                 </li>
               </ul>
               <div className="flex justify-between border-t border-accents-3 py-3 font-bold mb-10">
