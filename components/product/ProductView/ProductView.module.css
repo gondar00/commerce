@@ -7,7 +7,7 @@
 }
 
 .productDisplay {
-  @apply relative flex px-0 pb-0 relative box-border col-span-1 bg-violet;
+  @apply relative flex px-0 pb-0 relative box-border col-span-1;
   min-height: 600px;
 
   @screen md {
@@ -28,7 +28,7 @@
 }
 
 .nameBox {
-  @apply absolute top-6 left-0 z-20 pr-16;
+  @apply top-6 left-0 z-20 pr-16;
 
   @screen lg {
     @apply left-6 pr-16;
@@ -41,15 +41,15 @@
   }
 
   & .price {
-    @apply px-6 py-2 pb-4 bg-primary text-primary font-bold inline-block tracking-wide;
+    @apply px-6 py-2 pb-4 text-primary font-bold inline-block tracking-wide;
   }
 
-  @screen lg {
+  /* @screen lg {
     & .name,
     & .price {
       @apply bg-black text-white;
     }
-  }
+  } */
 }
 
 .sidebar {
@@ -65,6 +65,7 @@
 }
 
 .imageContainer {
+  padding: 25px;
   & > div {
     @apply h-full;
     & > div {

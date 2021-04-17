@@ -75,15 +75,6 @@ const ProductView: FC<Props> = ({ product }) => {
       />
       <div className={cn(s.root, 'fit')}>
         <div className={cn(s.productDisplay, 'fit')}>
-          <div className={s.nameBox}>
-            <h1 className={s.name}>{product.name}</h1>
-            <div className={s.price}>
-              {price}
-              {` `}
-              {product.prices?.price.currencyCode}
-            </div>
-          </div>
-
           <div className={s.sliderContainer}>
             <ProductSlider key={product.entityId}>
               {product.images.edges?.map((image, i) => (
@@ -133,6 +124,18 @@ const ProductView: FC<Props> = ({ product }) => {
                 </div>
               </div>
             ))}
+
+
+            <div className="pb-14 break-words w-full max-w-xl">
+              <div className={s.nameBox}>
+                <h1 className={s.name}>{product.name}</h1>
+                <div className={s.price}>
+                  {price}
+                  {` `}
+                  {product.prices?.price.currencyCode}
+                </div>
+              </div>
+            </div>
 
             <div className="pb-14 break-words w-full max-w-xl">
               <Text html={product.description} />
