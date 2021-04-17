@@ -18,8 +18,10 @@ interface Props {
 const LEGAL_PAGES = ['terms-of-use', 'shipping-returns', 'privacy-policy']
 
 const Footer: FC<Props> = ({ className, pages }) => {
-  const { sitePages, legalPages } = usePages(pages)
+  // const { sitePages, legalPages } = usePages(pages)
   const rootClassName = cn(className)
+
+  // console.log('22', pages)
 
   return (
     <footer className={rootClassName}>
@@ -41,21 +43,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
                   </a>
                 </Link>
               </li>
-              <li className="py-3 md:py-0 md:pb-4">
-                <Link href="/">
-                  <a className="text-primary hover:text-accents-6 transition ease-in-out duration-150">
-                    Careers
-                  </a>
-                </Link>
-              </li>
-              <li className="py-3 md:py-0 md:pb-4">
-                <Link href="/blog">
-                  <a className="text-primary hover:text-accents-6 transition ease-in-out duration-150">
-                    Blog
-                  </a>
-                </Link>
-              </li>
-              {legalPages.map((page) => (
+              {pages.map((page) => (
                 <li key={page.url} className="py-3 md:py-0 md:pb-4">
                   <Link href={page.url!}>
                     <a className="text-primary hover:text-accents-6 transition ease-in-out duration-150">
