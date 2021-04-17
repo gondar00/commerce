@@ -55,7 +55,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
                   </a>
                 </Link>
               </li>
-<!--               {pages.map((page) => (
+              {legalPages.map((page) => (
                 <li key={page.url} className="py-3 md:py-0 md:pb-4">
                   <Link href={page.url!}>
                     <a className="text-primary hover:text-accents-6 transition ease-in-out duration-150">
@@ -63,7 +63,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
                     </a>
                   </Link>
                 </li>
-              ))} -->
+              ))}
             </ul>
           </div>
         </div>
