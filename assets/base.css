@@ -93,6 +93,15 @@ body {
   margin: 0;
 }
 
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
